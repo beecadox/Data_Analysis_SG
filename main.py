@@ -20,6 +20,8 @@ if __name__ =="__main__":
                         choices=[1, 2, 3],
                         help='Choose which Assignment Part to run')
     args = parser.parse_args()
+    
+    
     if args.preprocess:
         data = preprocess()
     else:
