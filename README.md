@@ -15,42 +15,32 @@ Data Analysis Assessment for SG the **Data Scientist** role.
 ## How to run
  
  1. clone Repo
- 2. Examples of running the scripts: 
- default [raw data to be preprocessed + part1]:
-```
-python main.py
-python main.py --no-preprocess --part 1
-```
-[preprocessed data + another part]
-```
-python main.py --preprocess --part 3
+ 2. Create conda environment
+ ```
+    conda env create -f environment.yml
+ ```
+ 3. Run data_preprocessing.py file
+ ```
+    python data_preprocessing.py
+ ```
+ 4. Run each notebook either using Jupyter Lab or from command line:
+ ```
+    cd notebooks
+    ipython -c "%run part1.ipynb"
 ```
 
 ## Folder Structure
 
 ```
-app
 ├── ...
-├── __init__.py     
-├── main.py                 # main RESTful API File - on startup event
-├── config.py               # FastAPI Settings
-├── data
-│    └── data               # our 'data' in the form of a yaml file
-├── routes             
-│   ├── __init__.py     
-│   └── api.py              # APIRouter file for endpoints
-├── src             
-│   ├── endpoints           # contains all our endpoints
-│   │   ├── __init__.py       
-│   │   ├── attribute.py    
-│   │   ├── datatype.py 
-│   │   ├── mo_class.py 
-│   │   └── random.py
-│   ├── models              # contains our Pydantic Models
-│   │   ├── __init__.py       
-│   │   └── managed_objects.py 
-│   ├── utils               # some utils used 
-│   │   ├── __init__.py       
-│   │   ├── regex.py        # for regex matching
-│   │   └── data.py         # data initilization
+├── data_preprocessing.py               # file that will preprocess the raw dataset that is given as input    
+├── data            
+│   ├── assignment_preprocessed.csv     # dataset after being preprocessed in data_preprocessing.py
+│   └── assignment_rev2.csv             # raw dataset
+├── notebooks                           # jupyter notebooks - one for each assignment part
+│   ├── part1.ipynb     
+│   ├── part2.ipynb
+│   ├── part3.ipynb 
+│   └── statistics_visualization.ipynb  # jupyter notebook with some basic stats from the preprocessed dataset
+
 ```

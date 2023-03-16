@@ -1,9 +1,7 @@
 import pandas as pd
 import numpy as np 
 from scipy import stats
-import matplotlib.pyplot as plt
 import os
-import seaborn as sns
 
 DATASET_FOLDER = 'data'
 RAW_DATASET_FILE = 'assignment_rev2.csv'
