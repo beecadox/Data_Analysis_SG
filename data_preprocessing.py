@@ -61,8 +61,8 @@ def replace_na_and_boolean(dataset):
     unique_counts = dataset.nunique()
     # Filter columns based on number of unique values in this case 2
     cols_with_x_unique_vals = unique_counts[unique_counts == 2].index.tolist()
-    dataset.fillna(value=-1, inplace=True)
-    dataset[cols_with_x_unique_vals] = dataset[cols_with_x_unique_vals].astype(int)
+    dataset.fillna(value='False', inplace=True)
+    # dataset[cols_with_x_unique_vals] = dataset[cols_with_x_unique_vals].astype(int)
     return dataset 
 
 def preprocess_and_save(dataset):
